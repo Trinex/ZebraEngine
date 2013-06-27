@@ -105,7 +105,7 @@ EntityPtr FactoryManager::CreateEntity( std::string _name )
 
 //==============================================================================
 
-void FactoryManager::LoadBlueprint( std::string _path )
+void FactoryManager::LoadEntityBlueprints( std::string _path )
 {
     // Load XML data
     m_xml_parser.LoadXML(_path);
@@ -144,7 +144,7 @@ void FactoryManager::LoadBlueprint( std::string _path )
 				// *********** Create and set attribute ************** //
 
 				// Bool
-				if(type_string.compare("bool"))
+				if(type_string.compare("bool") == 0)
 				{
 					bool bool_value = boost::lexical_cast<bool>(value_string);
 					AttrPtr new_attr(new BaseGameFeatures::Attribute(rtti, name));
@@ -153,7 +153,7 @@ void FactoryManager::LoadBlueprint( std::string _path )
 				}
 
 				// Char
-				else if(type_string.compare("char"))
+				else if(type_string.compare("char") == 0)
 				{
 					boost::uint8_t char_value = boost::lexical_cast<boost::uint8_t>(value_string);
 					AttrPtr new_attr(new BaseGameFeatures::Attribute(rtti, name));
@@ -162,7 +162,7 @@ void FactoryManager::LoadBlueprint( std::string _path )
 				}
 
 				// Int
-				else if(type_string.compare("int"))
+				else if(type_string.compare("int") == 0)
 				{
 					boost::int32_t int_value = boost::lexical_cast<boost::int32_t>(value_string);
 					AttrPtr new_attr(new BaseGameFeatures::Attribute(rtti, name));
@@ -171,7 +171,7 @@ void FactoryManager::LoadBlueprint( std::string _path )
 				}
 
 				// Uint
-				else if(type_string.compare("uint"))
+				else if(type_string.compare("uint") == 0)
 				{
 					boost::uint32_t uint_value = boost::lexical_cast<boost::uint32_t>(value_string);
 					AttrPtr new_attr(new BaseGameFeatures::Attribute(rtti, name));
@@ -180,7 +180,7 @@ void FactoryManager::LoadBlueprint( std::string _path )
 				}
 
 				// Float
-				else if(type_string.compare("float"))
+				else if(type_string.compare("float") == 0)
 				{
 					float float_value = boost::lexical_cast<float>(value_string);
 					AttrPtr new_attr(new BaseGameFeatures::Attribute(rtti, name));
@@ -189,7 +189,7 @@ void FactoryManager::LoadBlueprint( std::string _path )
 				}
 
 				// String
-				else if(type_string.compare("string"))
+				else if(type_string.compare("string") == 0)
 				{
 					AttrPtr new_attr(new BaseGameFeatures::Attribute(rtti, name));
 					new_attr->SetValue<std::string>(value_string);
@@ -197,7 +197,7 @@ void FactoryManager::LoadBlueprint( std::string _path )
 				}
 
 				// Vector (float)
-				else if(type_string.compare("vectorf"))
+				else if(type_string.compare("vectorf") == 0)
 				{
 					sf::Vector2f vector_value;
 					std::vector<std::string> vector_values;
@@ -214,7 +214,7 @@ void FactoryManager::LoadBlueprint( std::string _path )
 				}
 
 				// Vector (int)
-				else if(type_string.compare("vectori"))
+				else if(type_string.compare("vectori") == 0)
 				{
 					sf::Vector2i vector_value;
 					std::vector<std::string> vector_values;
@@ -231,7 +231,7 @@ void FactoryManager::LoadBlueprint( std::string _path )
 				}
 
 				// Vector (uint)
-				else if(type_string.compare("vectoru"))
+				else if(type_string.compare("vectoru") == 0)
 				{
 					sf::Vector2u vector_value;
 					std::vector<std::string> vector_values;
@@ -267,6 +267,28 @@ void FactoryManager::LoadBlueprint( std::string _path )
 			}
 		}
     }
+}
+
+//==============================================================================
+
+void FactoryManager::LoadAssetBlueprint( std::string _path )
+{
+	// Load XML data
+	m_xml_parser.LoadXML(_path);
+	Data::XMLContainer* xml_data = m_xml_parser.GetXMLData();
+
+	// Find all entity tags
+	std::vector<Data::XMLContainer*> asset_tags;
+	xml_data->FindAllTags("Asset", asset_tags);
+
+	std::size_t tags = asset_tags.size();
+	for(unsigned int i = 0; i < tags; i++)
+	{
+		if(asset_tags[i]->GetValue("type").compare("texture") == 0)
+		{
+			
+		}
+	}
 }
 
 //==============================================================================

@@ -57,7 +57,8 @@ namespace Managers
 	EntityPtr									CreateEntity(std::string _name);
 	
 	// Load Blueprint
-	void										LoadBlueprint(std::string _path);
+	void										LoadEntityBlueprints(std::string _path);
+	void										LoadAssetBlueprint(std::string _path);
     };
   
 //==============================================================================

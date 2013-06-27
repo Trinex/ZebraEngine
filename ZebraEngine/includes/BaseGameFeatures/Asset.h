@@ -25,6 +25,7 @@ namespace BaseGameFeature
 		BaseGameAsset& operator=(const BaseGameAsset&);
 
 	protected:
+		id_t							m_id;
 		int								m_references;
 		Core::ZebraApplication*			mp_app;
 		const std::string				m_filename;
