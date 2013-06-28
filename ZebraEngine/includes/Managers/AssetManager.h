@@ -47,16 +47,22 @@ namespace Managers
 		bool                                      m_background_loading;
 		sf::Thread*                               mp_background_thread;
 		sf::Mutex                                 m_background_mutex;
+		std::vector<SpriteAsset*>				  m_sprites;
+		/*
 		std::map<const typeAssetID, ConfigAsset*> m_configs;
 		std::map<const typeAssetID, FontAsset*>   m_fonts;
 		std::map<const typeAssetID, ImageAsset*>  m_images;
 		std::map<const typeAssetID, SoundAsset*>  m_sounds;
 		std::map<const typeAssetID, MusicAsset*>  m_music;
+		*/
 
 		AssetManager(const AssetManager&);
 		AssetManager& operator=(const AssetManager&);
 
 		static void BackgroundLoop(void* theAssetManager);
+		void DeleteSprites();
+		void LoadSprites();
+		/*
 		void DeleteConfigs(void);
 		void LoadConfigs(AssetLoadingStyle theStyle);
 		void DeleteFonts(void);
@@ -67,15 +73,19 @@ namespace Managers
 		void LoadMusic(AssetLoadingStyle theStyle);
 		void DeleteSounds(void);
 		void LoadSounds(AssetLoadingStyle theStyle);
+		*/
 
 	public:
 		AssetManager();
 		virtual ~AssetManager();
 
 		void RegisterApp(Core::ZebraApplication* _app);
-		void LoadAssets(bool theBackgroundFlag = false);
+		void LoadAssetBlueprints(std::string _path, bool _theBackgroundFlag = false);
 		bool IsLoading(void);
 
+		bool LoadSpriteAsset(const id_t _id, SpriteAsset* _sprite);
+		bool LoadSpriteAsset(const std::string& _name, SpriteAsset* _sprite);
+		/*
 		ConfigAsset* AddConfig(
 			const typeAssetID theAssetID,
 			const std::string theFilename = "",
@@ -117,6 +127,7 @@ namespace Managers
 		SoundAsset* GetSound(const typeAssetID theAssetID);
 		sf::Sound* GetSoundPlayer(const typeAssetID theAssetID);
 		void UnloadSound(const typeAssetID theAssetID);
+		*/
 	};
 
 //==============================================================================

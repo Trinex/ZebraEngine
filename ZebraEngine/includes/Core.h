@@ -21,6 +21,7 @@
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include <SFML/Graphics/Sprite.hpp>
 
 ///Box2D
 #include <Box2D/Box2D.h>
