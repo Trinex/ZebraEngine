@@ -10,7 +10,6 @@
 #include "../../includes/BaseGameFeatures/Properties/CameraProperty.h"
 
 using namespace BaseGameFeatures;
-using namespace boost;
 using namespace std;
 
 
@@ -47,7 +46,7 @@ PropertyRegister* PropertyRegister::Instance()
 
 //==============================================================================
 
-void PropertyRegister::Register( shared_ptr<Property> _property, bool _on_frame )
+void PropertyRegister::Register( boost::shared_ptr<Property> _property, bool _on_frame )
 {
     m_registered_properties.push_back( _property );
     if( _on_frame )
@@ -56,7 +55,7 @@ void PropertyRegister::Register( shared_ptr<Property> _property, bool _on_frame 
 
 //==============================================================================
 
-shared_ptr<Property> PropertyRegister::FindProperty( id_t _id )
+boost::shared_ptr<Property> PropertyRegister::FindProperty( id_t _id )
 {
     std::size_t size = m_registered_properties.size();
     for( unsigned int i = 0; i < size; i++ )
@@ -66,12 +65,12 @@ shared_ptr<Property> PropertyRegister::FindProperty( id_t _id )
     }
     
     // Assert instead...
-    return shared_ptr<Property>();
+    return boost::shared_ptr<Property>();
 }
 
 //==============================================================================
 
-shared_ptr<Property> PropertyRegister::FindProperty( const std::string& _name )
+boost::shared_ptr<Property> PropertyRegister::FindProperty( const std::string& _name )
 {
     std::size_t size = m_registered_properties.size();
     for( unsigned int i = 0; i < size; i++ )
@@ -81,7 +80,7 @@ shared_ptr<Property> PropertyRegister::FindProperty( const std::string& _name )
     }
     
     // Assert instead...
-    return shared_ptr<Property>();
+    return boost::shared_ptr<Property>();
 }
 
 //==============================================================================
