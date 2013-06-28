@@ -18,6 +18,24 @@ namespace BaseGameFeature
 
 //==============================================================================
 
+	enum AssetType 
+	{
+		FirstStandardAsset  = 0,  ///< First Standard Asset Type Value
+		AssetSprite			= 1,
+		LastStandardAsset,        ///< Last Standard Asset Type Value
+
+		// The following can be used for custom assets
+		FirstCustomAsset    = 10, ///< First Custom Asset Type value
+		AssetCustom1        = 11, ///< Custom Asset Type 1
+		AssetCustom2        = 12, ///< Custom Asset Type 2
+		AssetCustom3        = 13, ///< Custom Asset Type 3
+		AssetCustom4        = 14, ///< Custom Asset Type 4
+		AssetCustom5        = 15, ///< Custom Asset Type 5
+		LastCustomAsset,          ///< Last Custom Asset Type Value
+	};
+
+//==============================================================================
+
 	class BaseGameAsset
 	{
 	private:
@@ -26,6 +44,8 @@ namespace BaseGameFeature
 
 	protected:
 		id_t							m_id;
+		std::string						m_name;
+		AssetType						m_asset_type;
 		int								m_references;
 		Core::ZebraApplication*			mp_app;
 		const std::string				m_filename;
@@ -35,7 +55,7 @@ namespace BaseGameFeature
 
 	public:
 		BaseGameAsset();
-		BaseGameAsset(const std::string _filename);
+		BaseGameAsset(const std::string _filename, AssetType _type);
 		virtual ~BaseGameAsset();
 
 		void							RegisterApp(Core::ZebraApplication* _app);

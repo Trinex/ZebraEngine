@@ -15,9 +15,9 @@ namespace BaseGameFeature
 	//==============================================================================
 
 	SpriteAsset::SpriteAsset(const std::string _filename)
-		: BaseGameAsset(_filename)
+		: BaseGameAsset(_filename, AssetSprite)
 	{
-		//m_filename = _filename
+		// Empty
 	}
 
 	//==============================================================================

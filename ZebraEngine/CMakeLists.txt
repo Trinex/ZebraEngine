@@ -52,6 +52,12 @@ if(WIN32)
 	FILE(GLOB BaseGameFeatures_S "source/BaseGameFeatures/*.cpp")
 	SOURCE_GROUP("Source Files\\BaseGameFeatures" FILES ${BaseGameFeatures_S})
 	
+		# Assets
+		FILE(GLOB Assets_H "includes/BaseGameFeatures/Assets/*.h")
+		SOURCE_GROUP("Header Files\\BaseGameFeatures\\Assets" FILES ${Assets_H})
+		FILE(GLOB Assets_S "source/BaseGameFeatures/Assets/*.cpp")
+		SOURCE_GROUP("Source Files\\BaseGameFeatures\\Assets" FILES ${Assets_S})
+
 		# Properties
 		FILE(GLOB Properties_H "includes/BaseGameFeatures/Properties/*.h")
 		SOURCE_GROUP("Header Files\\BaseGameFeatures\\Properties" FILES ${Properties_H})

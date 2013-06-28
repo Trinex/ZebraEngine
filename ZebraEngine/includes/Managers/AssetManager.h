@@ -16,30 +16,6 @@ namespace Managers
 
 //==============================================================================
 
-	enum AssetType 
-	{
-		FirstStandardAsset  = 0,  ///< First Standard Asset Type Value
-		AssetConfig         = 1,  ///< Config file Asset Type
-		AssetFont           = 2,  ///< Font Asset Type
-		AssetImage          = 3,  ///< Image/Texture Asset Type
-		AssetMusic          = 4,  ///< Background Music Asset Type
-		AssetScript         = 5,  ///< Script Asset Type
-		AssetSound          = 6,  ///< Sound Effect Asset Type
-		AssetLevel          = 7,  ///< Level/Map Asset Type
-		LastStandardAsset,        ///< Last Standard Asset Type Value
-
-		// The following can be used for custom assets
-		FirstCustomAsset    = 10, ///< First Custom Asset Type value
-		AssetCustom1        = 11, ///< Custom Asset Type 1
-		AssetCustom2        = 12, ///< Custom Asset Type 2
-		AssetCustom3        = 13, ///< Custom Asset Type 3
-		AssetCustom4        = 14, ///< Custom Asset Type 4
-		AssetCustom5        = 15, ///< Custom Asset Type 5
-		LastCustomAsset,          ///< Last Custom Asset Type Value
-	};
-
-//==============================================================================
-
 	class AssetManager
 	{
 	private:

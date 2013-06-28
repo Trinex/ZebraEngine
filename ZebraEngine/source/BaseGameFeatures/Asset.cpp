@@ -20,8 +20,8 @@ namespace BaseGameFeature
 
 	//==============================================================================
 
-	BaseGameAsset::BaseGameAsset(const std::string _filename)
-		: m_filename(_filename)
+	BaseGameAsset::BaseGameAsset(const std::string _filename, AssetType _type)
+		: m_filename(_filename), m_asset_type(_type)
 	{
 		//m_filename = _filename
 	}
