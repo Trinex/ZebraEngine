@@ -31,6 +31,7 @@ namespace BaseGameFeature
 		SpriteAsset(std::string _filename);
 		virtual ~SpriteAsset();
 
+		void											LoadAsset();
 		sf::Sprite*										GetSprite();
 	};
 

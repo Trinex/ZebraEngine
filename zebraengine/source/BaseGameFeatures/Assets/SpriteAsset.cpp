@@ -22,6 +22,14 @@ namespace BaseGameFeature
 
 	//==============================================================================
 
+	void SpriteAsset::LoadAsset()
+	{
+		m_texture.loadFromFile(m_filename);
+		m_sprite.setTexture(m_texture);
+	}
+
+	//==============================================================================
+
 	sf::Sprite* SpriteAsset::GetSprite()
 	{
 		return &m_sprite;
