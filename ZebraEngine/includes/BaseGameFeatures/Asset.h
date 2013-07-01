@@ -51,8 +51,6 @@ namespace BaseGameFeature
 		const std::string				m_filename;
 		bool							m_loaded;
 
-		virtual void					UnloadAsset()=0;
-
 	public:
 		BaseGameAsset();
 		BaseGameAsset(const std::string _filename, AssetType _type);
@@ -64,6 +62,7 @@ namespace BaseGameFeature
 		const int						GetReferences() const;
 		void							DropReference(bool _remove_flag = true);
 		virtual void					LoadAsset()=0;
+		virtual void					UnloadAsset()=0; // if public, it has to be handled.
 
 
 	};

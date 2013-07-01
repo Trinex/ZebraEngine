@@ -9,6 +9,7 @@
 #define ASSETMANAGER_H
 
 #include "../Core.h"
+#include "../BaseGameFeatures/Assets/SpriteAsset.h"
 
 
 namespace Managers
@@ -19,11 +20,13 @@ namespace Managers
 	class AssetManager
 	{
 	private:
-		Core::ZebraApplication*                   mp_app;
-		bool                                      m_background_loading;
-		sf::Thread*                               mp_background_thread;
-		sf::Mutex                                 m_background_mutex;
-		std::vector<SpriteAsset*>				  m_sprites;
+		static AssetManager*							mp_instance;
+		Core::ZebraApplication*							mp_app;
+		id_t											m_id_count;
+		bool											m_background_loading;
+		sf::Thread*										mp_background_thread;
+		sf::Mutex										m_background_mutex;
+		std::vector<BaseGameFeature::SpriteAsset*>		m_sprites;
 		/*
 		std::map<const typeAssetID, ConfigAsset*> m_configs;
 		std::map<const typeAssetID, FontAsset*>   m_fonts;
@@ -36,8 +39,8 @@ namespace Managers
 		AssetManager& operator=(const AssetManager&);
 
 		static void BackgroundLoop(void* theAssetManager);
-		void DeleteSprites();
-		void LoadSprites();
+		void DeleteSpriteAssets();
+		void LoadSpriteAssets();
 		/*
 		void DeleteConfigs(void);
 		void LoadConfigs(AssetLoadingStyle theStyle);
@@ -55,12 +58,17 @@ namespace Managers
 		AssetManager();
 		virtual ~AssetManager();
 
-		void RegisterApp(Core::ZebraApplication* _app);
-		void LoadAssetBlueprints(std::string _path, bool _theBackgroundFlag = false);
+		static AssetManager* Instance();
+		void RegisterApplication(Core::ZebraApplication* _app);
+		void ImportAssetBlueprints(const std::string& _path);
+		void LoadAssetBlueprints(const std::string& _name, bool _the_background_flag = false);
+		void UnloadAssetBlueprints(const std::string& _name, bool _the_background_flag = false);
 		bool IsLoading(void);
 
-		bool LoadSpriteAsset(const id_t _id, SpriteAsset* _sprite);
-		bool LoadSpriteAsset(const std::string& _name, SpriteAsset* _sprite);
+		bool GetAssetRef(const id_t _id, BaseGameFeature::BaseGameAsset* _asset);
+		bool GetAssetRef(const std::string& _name, BaseGameFeature::BaseGameAsset* _asset);
+		bool RemoveAssetRef(const id_t _id); // May be handled in asset.
+		bool RemoveAssetRef(const std::string& _name); // Mat be handled in asset.
 		/*
 		ConfigAsset* AddConfig(
 			const typeAssetID theAssetID,
