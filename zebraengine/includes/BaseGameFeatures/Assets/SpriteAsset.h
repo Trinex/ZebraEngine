@@ -13,12 +13,12 @@
 #include "../Asset.h"
 
 
-namespace BaseGameFeature
+namespace BaseGameFeatures
 {
 
 	//==============================================================================
 
-	class SpriteAsset : public BaseGameFeature::BaseGameAsset
+	class SpriteAsset : public BaseGameFeatures::BaseGameAsset
 	{
 	private:
 		sf::Texture										m_texture;

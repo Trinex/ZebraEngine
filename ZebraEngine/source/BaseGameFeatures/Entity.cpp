@@ -160,6 +160,38 @@ TYPE& Entity::GetAttribute(const std::string& _name)
 
 //============================================================================== 
 
+boost::shared_ptr<Attribute> Entity::GetAttributeRef(const id_t _id)
+{
+	for( unsigned int i = 0; i < m_attributes.size(); i++ )
+	{
+		if( m_attributes[i]->GetID() == _id )
+		{
+			return m_attributes[i];
+		}   
+	}
+
+	// assert
+	return boost::shared_ptr<Attribute>();
+}
+
+//============================================================================== 
+
+boost::shared_ptr<Attribute> Entity::GetAttributeRef(const std::string& _name)
+{
+	for( unsigned int i = 0; i < m_attributes.size(); i++ )
+	{
+		if( m_attributes[i]->GetName() == _name )
+		{
+			return m_attributes[i];
+		}   
+	}
+
+	// assert
+	return boost::shared_ptr<Attribute>();
+}
+
+//============================================================================== 
+
 boost::shared_ptr<Property> Entity::FindProperty(const id_t _id)
 {
     std::size_t size = m_properties.size();

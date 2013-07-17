@@ -13,7 +13,7 @@
 #include "../Core.h"
 
 
-namespace BaseGameFeature
+namespace BaseGameFeatures
 {
 
 //==============================================================================

@@ -9,7 +9,7 @@
 #include "../../../includes/BaseGameFeatures/Assets/SpriteAsset.h"
 
 
-namespace BaseGameFeature
+namespace BaseGameFeatures
 {
 
 	//==============================================================================

@@ -258,7 +258,7 @@ void FactoryManager::LoadEntityBlueprints( std::string _path )
 				{
 					if(m_property_templates[i]->GetName() == property_name)
 					{
-						BaseGameFeatures::Property* add_property;
+						BaseGameFeatures::Property* add_property = null;
 						memcpy(add_property, m_property_templates[i], sizeof(1)); // FIX
 						entity_template->AddProperty(PropertyPtr());
 						break;

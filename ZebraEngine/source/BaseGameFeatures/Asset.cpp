@@ -9,7 +9,7 @@
 #include "../../includes/BaseGameFeatures/Asset.h"
 
 
-namespace BaseGameFeature
+namespace BaseGameFeatures
 {
 
 	BaseGameAsset::BaseGameAsset()

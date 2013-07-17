@@ -36,7 +36,7 @@ AssetManager::~AssetManager()
 AssetManager* AssetManager::Instance()
 {
     if(mp_instance == NULL)
-	mp_instance = new AssetManager();
+		mp_instance = new AssetManager();
     
     return mp_instance;
 }

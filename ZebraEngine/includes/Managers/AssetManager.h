@@ -20,13 +20,13 @@ namespace Managers
 	class AssetManager
 	{
 	private:
-		static AssetManager*							mp_instance;
-		Core::ZebraApplication*							mp_app;
-		id_t											m_id_count;
-		bool											m_background_loading;
-		sf::Thread*										mp_background_thread;
-		sf::Mutex										m_background_mutex;
-		std::vector<BaseGameFeature::SpriteAsset*>		m_sprites;
+		static AssetManager* mp_instance;
+		Core::ZebraApplication*	mp_app;
+		id_t m_id_count;
+		bool m_background_loading;
+		sf::Thread*	mp_background_thread;
+		sf::Mutex m_background_mutex;
+		std::vector< boost::shared_ptr<BaseGameFeatures::SpriteAsset> > m_sprites;
 		/*
 		std::map<const typeAssetID, ConfigAsset*> m_configs;
 		std::map<const typeAssetID, FontAsset*>   m_fonts;
@@ -65,8 +65,8 @@ namespace Managers
 		void UnloadAssetBlueprints(const std::string& _name, bool _the_background_flag = false);
 		bool IsLoading(void);
 
-		bool GetAssetRef(const id_t _id, BaseGameFeature::BaseGameAsset* _asset);
-		bool GetAssetRef(const std::string& _name, BaseGameFeature::BaseGameAsset* _asset);
+		bool GetAssetRef(const id_t _id, boost::shared_ptr<BaseGameFeatures::BaseGameAsset> _asset);
+		bool GetAssetRef(const std::string& _name, BaseGameFeatures::BaseGameAsset* _asset);
 		bool RemoveAssetRef(const id_t _id); // May be handled in asset.
 		bool RemoveAssetRef(const std::string& _name); // Mat be handled in asset.
 		/*
