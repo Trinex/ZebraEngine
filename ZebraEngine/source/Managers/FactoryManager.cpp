@@ -105,6 +105,13 @@ EntityPtr FactoryManager::CreateEntity( std::string _name )
 
 //==============================================================================
 
+std::vector<BaseGameFeatures::AssetTemplate>& FactoryManager::GetAssetTemplates()
+{
+	return m_asset_templates;
+}
+
+//==============================================================================
+
 void FactoryManager::LoadEntityBlueprints( std::string _path )
 {
     // Load XML data
@@ -258,7 +265,7 @@ void FactoryManager::LoadEntityBlueprints( std::string _path )
 				{
 					if(m_property_templates[i]->GetName() == property_name)
 					{
-						BaseGameFeatures::Property* add_property = null;
+						BaseGameFeatures::Property* add_property = NULL;
 						memcpy(add_property, m_property_templates[i], sizeof(1)); // FIX
 						entity_template->AddProperty(PropertyPtr());
 						break;
@@ -284,11 +291,16 @@ void FactoryManager::LoadAssetBlueprint( std::string _path )
 	std::size_t tags = asset_tags.size();
 	for(unsigned int i = 0; i < tags; i++)
 	{
-		if(asset_tags[i]->GetValue("type").compare("texture") == 0)
+		if(asset_tags[i]->GetValue("type").compare("sprite") == 0)
 		{
-			
+			std::string texture_path = asset_tags[i]->GetValue("src");
+			boost::uint32_t asset_group = boost::lexical_cast<boost::uint32_t>( asset_tags[i]->GetValue("group") );
+			m_asset_templates.push_back( BaseGameFeatures::AssetTemplate(BaseGameFeatures::AssetSprite, texture_path, asset_group) );
 		}
 	}
+
+	// Tell asset manager to load default group
+	Managers::AssetManager::Instance()->LoadAssets(0, false);
 }
 
 //==============================================================================

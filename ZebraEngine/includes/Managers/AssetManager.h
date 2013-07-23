@@ -9,6 +9,7 @@
 #define ASSETMANAGER_H
 
 #include "../Core.h"
+#include "../BaseGameFeatures/Asset.h"
 #include "../BaseGameFeatures/Assets/SpriteAsset.h"
 
 
@@ -22,6 +23,7 @@ namespace Managers
 	private:
 		static AssetManager* mp_instance;
 		Core::ZebraApplication*	mp_app;
+
 		id_t m_id_count;
 		bool m_background_loading;
 		sf::Thread*	mp_background_thread;
@@ -60,9 +62,11 @@ namespace Managers
 
 		static AssetManager* Instance();
 		void RegisterApplication(Core::ZebraApplication* _app);
-		void ImportAssetBlueprints(const std::string& _path);
-		void LoadAssetBlueprints(const std::string& _name, bool _the_background_flag = false);
-		void UnloadAssetBlueprints(const std::string& _name, bool _the_background_flag = false);
+		//void ImportAssetBlueprints(const std::string& _path);
+		//void LoadAssetBlueprints(const std::string& _name, bool _the_background_flag = false);
+		//void UnloadAssetBlueprints(const std::string& _name, bool _the_background_flag = false);
+		void LoadAssets(unsigned int _group, bool _background_flag = false);
+		void UnloadAssets(unsigned int _group, bool _background_flag = false);
 		bool IsLoading(void);
 
 		bool GetAssetRef(const id_t _id, boost::shared_ptr<BaseGameFeatures::BaseGameAsset> _asset);

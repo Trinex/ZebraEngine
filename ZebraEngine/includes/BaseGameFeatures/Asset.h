@@ -61,10 +61,25 @@ namespace BaseGameFeatures
 		void							AddReference();
 		const int						GetReferences() const;
 		void							DropReference(bool _remove_flag = true);
-		virtual void					LoadAsset()=0;
-		virtual void					UnloadAsset()=0; // if public, it has to be handled.
+		virtual bool					LoadAsset()=0;
+		virtual bool					UnloadAsset()=0; // if public, it has to be handled.
 
 
+	};
+
+//==============================================================================
+
+	struct AssetTemplate
+	{
+		AssetTemplate(AssetType _type, std::string _path, unsigned int _group) 
+			: asset_type(_type), asset_path(_path), asset_group(_group) 
+		{ 
+			/*Empty*/ 
+		}
+
+		AssetType asset_type;
+		std::string asset_path;
+		unsigned int asset_group;
 	};
 
 //==============================================================================
