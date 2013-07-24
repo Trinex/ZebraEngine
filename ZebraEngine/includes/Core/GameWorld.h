@@ -8,8 +8,8 @@
 #ifndef GAMEWORLD_H
 #define GAMEWORLD_H
 
-#include "../Properties.h"
 #include "../Managers.h"
+#include "../Properties.h"
 
 namespace Core
 {

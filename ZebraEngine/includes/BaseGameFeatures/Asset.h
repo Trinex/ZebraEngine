@@ -10,8 +10,7 @@
 
 #include <assert.h>
 #include <string>
-#include "../Core.h"
-
+#include "../Core/Types.h"
 
 namespace BaseGameFeatures
 {

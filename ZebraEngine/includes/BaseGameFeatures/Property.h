@@ -8,10 +8,8 @@
 #ifndef PROPERTY_H
 #define PROPERTY_H
 
-//#include "../Core.h"
-//#include "../Data/TypeDefinitions.h"
+#include "../Core/Types.h"
 #include "../Data/Macros.h"
-
 
 namespace BaseGameFeatures
 {

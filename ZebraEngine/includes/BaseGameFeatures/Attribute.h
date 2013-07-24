@@ -8,12 +8,10 @@
 #ifndef ATTRIBUTE_H
 #define ATTRIBUTE_H
 
-#include "../Core.h"
-#include "../Data/TypeDefinitions.h"
 #include <string>
-#include <boost/cstdint.hpp>
 #include <boost/variant.hpp>
-
+#include <SFML/System/Vector2.hpp>
+#include "../Core/Types.h"
 
 namespace BaseGameFeatures
 {

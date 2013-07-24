@@ -9,10 +9,9 @@
 #define FACTORYMANAGER_H
 
 //#include "../BaseGameFeatures/Entity.h"
+#include "../Data/Macros.h"
 #include "AssetManager.h"
 #include "EntityManager.h"
-#include "../Core/Types.h"
-#include "../Data/TypeDefinitions.h"
 #include "../Data/XMLParser.h"
 
 namespace BaseGameFeatures

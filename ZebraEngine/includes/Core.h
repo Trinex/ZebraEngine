@@ -33,7 +33,7 @@
 ///Core
 #include "Core/Types.h"
 #include "Core/ZebraApplication.h"
-#include "Core/GameWorld.h"
+//#include "Core/GameWorld.h"
 
 ///Graphics
 #include "Graphics/DebugDrawer.h"

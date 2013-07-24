@@ -8,8 +8,8 @@
 #ifndef ASSETMANAGER_H
 #define ASSETMANAGER_H
 
-#include "../Core.h"
-#include "../BaseGameFeatures/Asset.h"
+#include <SFML\System\Thread.hpp>
+#include <SFML\System\Mutex.hpp>
 #include "../BaseGameFeatures/Assets/SpriteAsset.h"
 
 

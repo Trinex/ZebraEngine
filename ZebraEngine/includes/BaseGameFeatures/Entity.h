@@ -8,12 +8,10 @@
 #ifndef BASEGAMEENTITY_H
 #define BASEGAMEENTITY_H
 
-#include "../Core.h"
-#include "../Data/Macros.h"
-#include "../Data/TypeDefinitions.h"
 #include "Property.h"
 #include "Attribute.h"
 #include "Asset.h"
+#include <vector>
 
 
 namespace BaseGameFeatures
@@ -21,9 +19,9 @@ namespace BaseGameFeatures
 	
 //==============================================================================
 
-    class Property;
-    class Attribute;
-	class BaseGameAsset;
+    //class Property;
+    //class Attribute;
+	//class BaseGameAsset;
 
 //==============================================================================
 

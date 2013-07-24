@@ -14,9 +14,6 @@
 
 ///Managers
 #include "Managers/InputManager.h"
-#include "Managers/EntityManager.h"
 #include "Managers/FactoryManager.h"
-#include "Managers/AssetManager.h"
-
 
 #endif

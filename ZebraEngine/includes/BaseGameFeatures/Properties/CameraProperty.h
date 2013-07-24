@@ -9,7 +9,6 @@
 #define CAMERAPROPERTY_H
 
 #include "../Property.h"
-#include "../../Data/Macros.h"
 
 namespace BaseGameFeatures
 {

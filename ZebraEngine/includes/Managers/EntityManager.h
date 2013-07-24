@@ -8,10 +8,7 @@
 #ifndef ENTITYMANAGER_H
 #define ENTITYMANAGER_H
 
-#include "../Core.h"
-#include "../Entities.h"
 #include "../BaseGameFeatures/Entity.h"
-#include "../Data/TypeDefinitions.h"
 
 namespace BaseGameFeatures
 {
