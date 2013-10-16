@@ -10,6 +10,9 @@
 
 #include "../Core.h"
 #include "../BaseGameFeatures/Event.h"
+#include <map>
+#include <boost\signals2.hpp>
+#include <boost\ptr_container\ptr_map.hpp>
 
 
 namespace Managers
@@ -30,8 +33,9 @@ private:
 	Core::ZebraApplication*     						mp_app;
 
 	// Data
-	std::vector<std::string>							m_registered_names;
-	std::vector<BaseGameFeatures::Event*>				m_registered_events;
+	boost::ptr_map<std::string, boost::signals2::signal_base>		m_signals;
+	//std::vector<std::string>							m_registered_names;
+	//std::vector<BaseGameFeatures::Event*>				m_registered_events;
 
 
 public:
@@ -40,7 +44,7 @@ public:
 	static EventManager*								Instance();
 	void												RegisterApplication(Core::ZebraApplication*);
 	void												RegisterEvent(BaseGameFeatures::Event*, std::string);
-	void												Subscribe(std::string _name);
+	void												Subscribe(void* function);
 };
 
 //==============================================================================

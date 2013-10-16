@@ -22,10 +22,20 @@ namespace BaseGameFeatures
 
 	//==============================================================================
 
-	void SpriteAsset::LoadAsset()
+	bool SpriteAsset::LoadAsset()
 	{
-		m_texture.loadFromFile(m_filename);
-		m_sprite.setTexture(m_texture);
+		bool loaded = m_texture.loadFromFile(m_filename);
+		if(loaded)
+			m_sprite.setTexture(m_texture);
+		return loaded;
+	}
+
+	//==============================================================================
+
+	bool SpriteAsset::UnloadAsset()
+	{
+		// TODO
+		return true;
 	}
 
 	//==============================================================================

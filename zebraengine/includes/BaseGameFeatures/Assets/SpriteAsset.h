@@ -10,8 +10,9 @@
 
 #include <assert.h>
 #include <string>
+#include <SFML\Graphics\Texture.hpp>
+#include <SFML\Graphics\Sprite.hpp>
 #include "../Asset.h"
-
 
 namespace BaseGameFeatures
 {
@@ -31,9 +32,14 @@ namespace BaseGameFeatures
 		SpriteAsset(std::string _filename);
 		virtual ~SpriteAsset();
 
-		void											LoadAsset();
+		bool											LoadAsset();
+		bool											UnloadAsset();
 		sf::Sprite*										GetSprite();
 	};
+
+	//==============================================================================
+
+	typedef boost::shared_ptr<BaseGameFeatures::SpriteAsset> SpritePtr;
 
 	//==============================================================================
 

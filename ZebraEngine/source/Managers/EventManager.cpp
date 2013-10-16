@@ -58,9 +58,11 @@ void EventManager::RegisterEvent(Event* _Event, std::string _name)
 
 //==============================================================================
 
-void EventManager::Subscribe(std::string _name)
+void EventManager::Subscribe(void* _function)
 {
 	// To be made
+	//m_signals["test"].connect(&EventManager::RegisterEvent);
+	//m_signals["test"](5, 6);
 }
 
 //==============================================================================

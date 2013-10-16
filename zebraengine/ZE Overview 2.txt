@@ -1,0 +1,47 @@
+
+Zebra Engine Overview 2
+
+Core.h
+
+-Core/Config.h
+  *Libs
+
+-SFML
+
+-Box2d
+
+-Boost(shared_ptr, cstdint)
+
+-Core/Types.h
+  *Forward declarations
+
+-Core/ZebraApplication.h
+  *Core/GameWorld.h
+    ~Managers.h
+      +InputManager.h
+      +FactoryManager.h
+	-Macros.h
+        -AssetManager.h
+		-BaseGameFeatures/Asset.h
+		-BaseGameFeatures/SpriteAsset.h
+        -EntityManager.h
+	  -BaseGameFeatures/Entity.h
+	    *Property.h
+	      ~string
+	      ~boost (variant)
+	    //*Asset.h
+
+	-Data/XMLParser.h
+	  -XMLContainer.h
+      
+    ~Properties.h
+      +CameraProperty.h
+	//-Property.h
+
+-Core/GameWorld.h
+
+-Graphics/DebugDrawer.h
+
+-Graphics/RenderModule.h
+
+-Physics/PhysicsModule.h
