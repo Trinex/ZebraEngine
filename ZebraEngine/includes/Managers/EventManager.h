@@ -20,6 +20,11 @@ namespace Managers
 
 //==============================================================================
 
+class EventData
+{
+
+};
+
 class EventManager
 {
 private:
@@ -33,7 +38,8 @@ private:
 	Core::ZebraApplication*     						mp_app;
 
 	// Data
-	boost::ptr_map<std::string, boost::signals2::signal_base>		m_signals;
+	std::map<std::string, boost::signals2::signal<void(Event)>> m_signals;
+	//boost::ptr_map<std::string, boost::signals2::signal_base>		m_signals;
 	//std::vector<std::string>							m_registered_names;
 	//std::vector<BaseGameFeatures::Event*>				m_registered_events;
 
@@ -43,8 +49,8 @@ public:
 
 	static EventManager*								Instance();
 	void												RegisterApplication(Core::ZebraApplication*);
-	void												RegisterEvent(BaseGameFeatures::Event*, std::string);
-	void												Subscribe(void* function);
+	void												RegisterEvent(std::string _name, BaseGameFeatures::Event _event);
+	void												Subscribe(std::string _name, void* _function);
 };
 
 //==============================================================================

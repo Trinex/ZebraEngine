@@ -51,17 +51,17 @@ void EventManager::RegisterApplication(Core::ZebraApplication* _app)
 
 //==============================================================================
 
-void EventManager::RegisterEvent(Event* _Event, std::string _name)
+void EventManager::RegisterEvent(std::string _name, Event _Event)
 {
 	// To be made
 }
 
 //==============================================================================
 
-void EventManager::Subscribe(void* _function)
+void EventManager::Subscribe(std::string _name, void* _function)
 {
 	// To be made
-	//m_signals["test"].connect(&EventManager::RegisterEvent);
+	boost::signals2::signal<void(Event)> signal = m_signals[_name];
 	//m_signals["test"](5, 6);
 }
 
